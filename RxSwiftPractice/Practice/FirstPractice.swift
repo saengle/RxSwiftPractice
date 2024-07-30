@@ -57,12 +57,21 @@ extension FirstPracticeViewController {
 //        .disposed(by: disposeBag)
 //        
         // 3. leak 대응. (RX와 연관은 없지만 ,, 아무튼 누수 방지. 스위프트 방식으로)
-        button.rx.tap.subscribe { [weak self] _ in
-            self?.label.text = "훌랄라숯불바베큐치킨먹고싶다아아아"
-        } onDisposed: {
-            print("Disposed")
-        }
-        .disposed(by: disposeBag)
+//        button.rx.tap.subscribe { [weak self] _ in
+//            self?.label.text = "훌랄라숯불바베큐치킨먹고싶다아아아"
+//        } onDisposed: {
+//            print("Disposed")
+//        }
+//        .disposed(by: disposeBag)
+        //4.
+        button.rx.tap
+            .withUnretained(self) // weak self 매번 쓰기 귀찮으니 기능으로 구현해줌.
+            .subscribe { _ in
+                self.label.text = "버튼이 클릭되었다구우우웅"
+            } onDisposed: {
+                print("Disposed")
+            }
+            .disposed(by: disposeBag)
     }
     
     private func setUI() {
