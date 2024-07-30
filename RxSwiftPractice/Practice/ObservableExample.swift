@@ -63,7 +63,32 @@ extension ObservableExample {
  of - Disposed
  */
     }
-    
-    
-    
+    func thirdFrom() { // 배열을 파라미터로 받고 각 엘리먼트를 옵저버블로 리턴함.
+        let itemsA = ["영화보기", "꿀잠자기", "수영하기", "시공조아"]
+        Observable.from(itemsA)
+            .subscribe { value in
+                print("from - \(value)")
+            } onError: { error in
+                print("from - \(error)")
+            } onCompleted: {
+                print("from - Completed")
+            } onDisposed: {
+                print("from - Disposed")
+            }
+            .disposed(by: disposeBag)
+        /*
+         from - 영화보기
+         from - 꿀잠자기
+         from - 수영하기
+         from - 시공조아
+         from - Completed
+         from - Disposed
+         */
+    }
+         take - ["영화보기", "꿀잠자기", "수영하기", "시공조아"]
+         take - ["영화보기", "꿀잠자기", "수영하기", "시공조아"]
+         take - Completed
+         take - Disposed
+         */
+    }
 }
