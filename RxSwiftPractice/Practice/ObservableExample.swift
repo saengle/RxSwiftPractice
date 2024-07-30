@@ -15,7 +15,7 @@ class ObservableExample: UIViewController {
     let disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
-        firstJust()
+        secondOf()
     }
 }
 extension ObservableExample {
@@ -40,4 +40,30 @@ extension ObservableExample {
          just - Disposed
          */
     }
+    
+    func secondOf() { // element parameter가 가변 파라미터로 선언되어있어서 여러 가지 값을 동시에 전달 할 수 있음.
+        let itemsA = ["영화보기", "꿀잠자기", "수영하기", "시공조아"]
+        let itemsB = ["순살로 한 감자탕", "빠가사리매운탕", "매운 떡볶이"]
+        
+        Observable.of(itemsA, itemsB)
+            .subscribe { value in
+                print("of - \(value)")
+            } onError: { error in
+                print("of - \(error)")
+            } onCompleted: {
+                print("of - Completed")
+            } onDisposed: {
+                print("of - Disposed")
+            }
+            .disposed(by: disposeBag)
+/*
+ of - ["영화보기", "꿀잠자기", "수영하기", "시공조아"]
+ of - ["순살로 한 감자탕", "빠가사리매운탕", "매운 떡볶이"]
+ of - Completed
+ of - Disposed
+ */
+    }
+    
+    
+    
 }
