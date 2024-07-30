@@ -20,6 +20,7 @@ class FirstPracticeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
+        firstPractice()
     }
 }
 /*
@@ -35,6 +36,17 @@ class FirstPracticeViewController: UIViewController {
  */
 extension FirstPracticeViewController {
     private func firstPractice() {
+        // 1.
+//        button.rx.tap.subscribe { _ in
+//            self.label.text = "버튼을 클릭했다 오바"
+//        } onError: { error in
+//            print("error")
+//        } onCompleted: {
+//            print("completed")
+//        } onDisposed: {
+//            print("disposed")
+//        }
+//        .disposed(by: disposeBag)
         
         
     }
