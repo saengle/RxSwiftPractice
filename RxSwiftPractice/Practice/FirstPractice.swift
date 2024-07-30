@@ -72,14 +72,25 @@ extension FirstPracticeViewController {
 //                print("Disposed")
 //            }
 //            .disposed(by: disposeBag)
-        //5.  subscribe 자체에 weak self 기능을 가져옴
-        button.rx.tap
-            .subscribe(with: self) { owner, _ in // owner 가 클로저안에서는 self를 대신하니 오우너로 사용!!
-                owner.label.text = "뭐라고 써도 관계 없지만 보통 owner 괜찮은듯 ??"
-            } onDisposed: { owner in
-                print("Disposed")
+//        //5.  subscribe 자체에 weak self 기능을 가져옴
+//        button.rx.tap
+//            .subscribe(with: self) { owner, _ in // owner 가 클로저안에서는 self를 대신하니 오우너로 사용!!
+//                owner.label.text = "뭐라고 써도 관계 없지만 보통 owner 괜찮은듯 ??"
+//            } onDisposed: { owner in
+//                print("Disposed")
+//            }
+//            .disposed(by: disposeBag)
+        //6. uikit에서만 사용 가능.
+        // 섭스크라이브는 스레드가 보장이 되지 않음 ! -> 백그라운드에서도 동작 됨 어떤 스레드든 관계 없이.
+        // & 보라색 에서 발생 가능 ! -> 디스패치큐 메인 사용해야함.
+        button.rx.tap.subscribe(with: self) { owner, _ in
+            DispatchQueue.main.async{
+                owner.label.text = "요 위 오우너는 왜 쓸때마다 다른 추천어가 떠서 탭 누르면 자꾸 다른거로 변경되는거야 ... 맘에 안들어 고쳐줘요 알엑스"
             }
-            .disposed(by: disposeBag)
+        } onDisposed: { owner in
+            print("뭐야 요기는 멀쩡하잖아 저 위만 저러네 ??? Disposed ! ")
+        }
+        .disposed(by: disposeBag)
     }
     
     private func setUI() {
