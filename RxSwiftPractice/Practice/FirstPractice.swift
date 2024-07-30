@@ -47,7 +47,14 @@ extension FirstPracticeViewController {
 //            print("disposed")
 //        }
 //        .disposed(by: disposeBag)
-        
+        // 2. 1에서 필요 없는것 일부 삭제 .
+        // 인피니트 옵저버 시퀀스 이므로 에러, 컴플리트가 없음.
+        button.rx.tap.subscribe { _ in
+            self.label.text = "버튼 이즈 클릭드"
+        } onDisposed: {
+            print("disposed")
+        }
+        .disposed(by: disposeBag)
         
     }
     
