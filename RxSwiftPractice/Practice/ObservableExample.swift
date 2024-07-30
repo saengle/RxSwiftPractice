@@ -15,7 +15,7 @@ class ObservableExample: UIViewController {
     let disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
-        secondOf()
+        fourthTake()
     }
 }
 extension ObservableExample {
@@ -85,6 +85,21 @@ extension ObservableExample {
          from - Disposed
          */
     }
+    func fourthTake() { // 방출된 아이템 중 처음 N개의 아이템을 방출 ( 배열이면 배열 전체를 2번 방출
+        let itemsA = ["영화보기", "꿀잠자기", "수영하기", "시공조아"]
+        Observable.repeatElement(itemsA)
+            .take(2)
+            .subscribe { value in
+                print("take - \(value)")
+            } onError: { error in
+                print("take - \(error)")
+            } onCompleted: {
+                print("take - Completed")
+            } onDisposed: {
+                print("take - Disposed")
+            }
+            .disposed(by: disposeBag)
+        /*
          take - ["영화보기", "꿀잠자기", "수영하기", "시공조아"]
          take - ["영화보기", "꿀잠자기", "수영하기", "시공조아"]
          take - Completed
