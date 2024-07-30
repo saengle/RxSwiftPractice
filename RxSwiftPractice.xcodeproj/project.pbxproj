@@ -19,6 +19,7 @@
 		8E7B73AA2C594E7700A5FB7C /* PickerViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B73A92C594E7700A5FB7C /* PickerViewVC.swift */; };
 		8E7B73AD2C5951CB00A5FB7C /* TableViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B73AC2C5951CB00A5FB7C /* TableViewVC.swift */; };
 		8E7B73AF2C5953D500A5FB7C /* Switch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B73AE2C5953D500A5FB7C /* Switch.swift */; };
+		8E7B73B12C5956BB00A5FB7C /* TextFieldButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B73B02C5956BB00A5FB7C /* TextFieldButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		8E7B73A92C594E7700A5FB7C /* PickerViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewVC.swift; sourceTree = "<group>"; };
 		8E7B73AC2C5951CB00A5FB7C /* TableViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewVC.swift; sourceTree = "<group>"; };
 		8E7B73AE2C5953D500A5FB7C /* Switch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Switch.swift; sourceTree = "<group>"; };
+		8E7B73B02C5956BB00A5FB7C /* TextFieldButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				8E7B73A92C594E7700A5FB7C /* PickerViewVC.swift */,
 				8E7B73AC2C5951CB00A5FB7C /* TableViewVC.swift */,
 				8E7B73AE2C5953D500A5FB7C /* Switch.swift */,
+				8E7B73B02C5956BB00A5FB7C /* TextFieldButton.swift */,
 			);
 			path = Practice;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 				8E7B738F2C59390900A5FB7C /* ViewController.swift in Sources */,
 				8E7B73A02C593AA300A5FB7C /* FirstPractice.swift in Sources */,
 				8E7B738B2C59390900A5FB7C /* AppDelegate.swift in Sources */,
+				8E7B73B12C5956BB00A5FB7C /* TextFieldButton.swift in Sources */,
 				8E7B738D2C59390900A5FB7C /* SceneDelegate.swift in Sources */,
 				8E7B73AA2C594E7700A5FB7C /* PickerViewVC.swift in Sources */,
 				8E7B73AF2C5953D500A5FB7C /* Switch.swift in Sources */,
