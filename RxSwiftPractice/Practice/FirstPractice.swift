@@ -104,10 +104,15 @@ extension FirstPracticeViewController {
         //
             // 8. subscribe 자체를 메인스레드에서 동작시켜주자 ~ 저것도 쓰다보니 귀찮아 !(위 기능 전부 포함)
         // + 버튼은 error가 애초에 없는데 안받는 친구는 없어 ???   => UI
+//        button.rx.tap
+//            .bind(with: self) { owner, _ in
+//                owner.label.text = "bind 님 두둥 등장 UI관련된 귀찮은것들 다 줄여주지 후하하하하"
+//            }
+//            .disposed(by: disposeBag)
+        // 9.
         button.rx.tap
-            .bind(with: self) { owner, _ in
-                owner.label.text = "bind 님 두둥 등장 UI관련된 귀찮은것들 다 줄여주지 후하하하하"
-            }
+            .map{"버튼을 클릭했어요를레이히"} // observable<String>
+            .bind(to: label.rx.text)
             .disposed(by: disposeBag)
     }
     
