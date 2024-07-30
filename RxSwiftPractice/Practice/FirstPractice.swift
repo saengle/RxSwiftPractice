@@ -91,17 +91,24 @@ extension FirstPracticeViewController {
 //            print("뭐야 요기는 멀쩡하잖아 저 위만 저러네 ??? Disposed ! ")
 //        }
 //        .disposed(by: disposeBag)
-        //7. DispatchQueue 자꾸 쓰기 귀찮을테니 기능으로 넣어줄게 !
-        // 짜쟌 스레드 고정하는 방법이야 !
+//        //7. DispatchQueue 자꾸 쓰기 귀찮을테니 기능으로 넣어줄게 !
+//        // 짜쟌 스레드 고정하는 방법이야 !
+//        button.rx.tap
+//            .observe(on: MainScheduler.instance) // 앞으로 진행하는 코드는 메인스레드로 진행해줄게 !
+//            .subscribe(with: self) { owner, _ in
+//                owner.label.text = "뭔가 다시 길어졌어 ..."
+//            } onDisposed: { owner in
+//                print("disPoseddddd")
+//            }
+//            .disposed(by: disposeBag) // 이거도 자꾸 쓰다보니 아주 귀찮아지는군
+        //
+            // 8. subscribe 자체를 메인스레드에서 동작시켜주자 ~ 저것도 쓰다보니 귀찮아 !(위 기능 전부 포함)
+        // + 버튼은 error가 애초에 없는데 안받는 친구는 없어 ???   => UI
         button.rx.tap
-            .observe(on: MainScheduler.instance) // 앞으로 진행하는 코드는 메인스레드로 진행해줄게 !
-            .subscribe(with: self) { owner, _ in
-                owner.label.text = "뭔가 다시 길어졌어 ..."
-            } onDisposed: { owner in
-                print("disPoseddddd")
+            .bind(with: self) { owner, _ in
+                owner.label.text = "bind 님 두둥 등장 UI관련된 귀찮은것들 다 줄여주지 후하하하하"
             }
-            .disposed(by: disposeBag) // 이거도 자꾸 쓰다보니 아주 귀찮아지는군
-
+            .disposed(by: disposeBag)
     }
     
     private func setUI() {
