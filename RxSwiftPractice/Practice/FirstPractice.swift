@@ -64,11 +64,19 @@ extension FirstPracticeViewController {
 //        }
 //        .disposed(by: disposeBag)
         //4.
+//        button.rx.tap
+//            .withUnretained(self) // weak self 매번 쓰기 귀찮으니 기능으로 구현해줌.
+//            .subscribe { _ in
+//                self.label.text = "버튼이 클릭되었다구우우웅"
+//            } onDisposed: {
+//                print("Disposed")
+//            }
+//            .disposed(by: disposeBag)
+        //5.  subscribe 자체에 weak self 기능을 가져옴
         button.rx.tap
-            .withUnretained(self) // weak self 매번 쓰기 귀찮으니 기능으로 구현해줌.
-            .subscribe { _ in
-                self.label.text = "버튼이 클릭되었다구우우웅"
-            } onDisposed: {
+            .subscribe(with: self) { owner, _ in // owner 가 클로저안에서는 self를 대신하니 오우너로 사용!!
+                owner.label.text = "뭐라고 써도 관계 없지만 보통 owner 괜찮은듯 ??"
+            } onDisposed: { owner in
                 print("Disposed")
             }
             .disposed(by: disposeBag)
