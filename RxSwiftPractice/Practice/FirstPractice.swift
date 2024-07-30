@@ -80,17 +80,28 @@ extension FirstPracticeViewController {
 //                print("Disposed")
 //            }
 //            .disposed(by: disposeBag)
-        //6. uikit에서만 사용 가능.
-        // 섭스크라이브는 스레드가 보장이 되지 않음 ! -> 백그라운드에서도 동작 됨 어떤 스레드든 관계 없이.
-        // & 보라색 에서 발생 가능 ! -> 디스패치큐 메인 사용해야함.
-        button.rx.tap.subscribe(with: self) { owner, _ in
-            DispatchQueue.main.async{
-                owner.label.text = "요 위 오우너는 왜 쓸때마다 다른 추천어가 떠서 탭 누르면 자꾸 다른거로 변경되는거야 ... 맘에 안들어 고쳐줘요 알엑스"
+//        //6. uikit에서만 사용 가능.
+//        // 섭스크라이브는 스레드가 보장이 되지 않음 ! -> 백그라운드에서도 동작 됨 어떤 스레드든 관계 없이.
+//        // & 보라색 에서 발생 가능 ! -> 디스패치큐 메인 사용해야함.
+//        button.rx.tap.subscribe(with: self) { owner, _ in
+//            DispatchQueue.main.async{
+//                owner.label.text = "요 위 오우너는 왜 쓸때마다 다른 추천어가 떠서 탭 누르면 자꾸 다른거로 변경되는거야 ... 맘에 안들어 고쳐줘요 알엑스"
+//            }
+//        } onDisposed: { owner in
+//            print("뭐야 요기는 멀쩡하잖아 저 위만 저러네 ??? Disposed ! ")
+//        }
+//        .disposed(by: disposeBag)
+        //7. DispatchQueue 자꾸 쓰기 귀찮을테니 기능으로 넣어줄게 !
+        // 짜쟌 스레드 고정하는 방법이야 !
+        button.rx.tap
+            .observe(on: MainScheduler.instance) // 앞으로 진행하는 코드는 메인스레드로 진행해줄게 !
+            .subscribe(with: self) { owner, _ in
+                owner.label.text = "뭔가 다시 길어졌어 ..."
+            } onDisposed: { owner in
+                print("disPoseddddd")
             }
-        } onDisposed: { owner in
-            print("뭐야 요기는 멀쩡하잖아 저 위만 저러네 ??? Disposed ! ")
-        }
-        .disposed(by: disposeBag)
+            .disposed(by: disposeBag) // 이거도 자꾸 쓰다보니 아주 귀찮아지는군
+
     }
     
     private func setUI() {
