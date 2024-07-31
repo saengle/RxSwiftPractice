@@ -24,6 +24,7 @@
 		8E7B73B82C5A58F100A5FB7C /* AddingNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B73B72C5A58F100A5FB7C /* AddingNumbers.swift */; };
 		8E7B73BA2C5A5E5100A5FB7C /* SimpleValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B73B92C5A5E5100A5FB7C /* SimpleValidation.swift */; };
 		8E7B73BC2C5A74E700A5FB7C /* SimpleTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B73BB2C5A74E700A5FB7C /* SimpleTableView.swift */; };
+		8E7B73BE2C5A78CE00A5FB7C /* SimplePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B73BD2C5A78CE00A5FB7C /* SimplePickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		8E7B73B72C5A58F100A5FB7C /* AddingNumbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingNumbers.swift; sourceTree = "<group>"; };
 		8E7B73B92C5A5E5100A5FB7C /* SimpleValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleValidation.swift; sourceTree = "<group>"; };
 		8E7B73BB2C5A74E700A5FB7C /* SimpleTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableView.swift; sourceTree = "<group>"; };
+		8E7B73BD2C5A78CE00A5FB7C /* SimplePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplePickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				8E7B73B72C5A58F100A5FB7C /* AddingNumbers.swift */,
 				8E7B73B92C5A5E5100A5FB7C /* SimpleValidation.swift */,
 				8E7B73BB2C5A74E700A5FB7C /* SimpleTableView.swift */,
+				8E7B73BD2C5A78CE00A5FB7C /* SimplePickerView.swift */,
 			);
 			path = Practice;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 				8E7B73B12C5956BB00A5FB7C /* TextFieldButton.swift in Sources */,
 				8E7B73B32C595AD300A5FB7C /* ObservableExample.swift in Sources */,
 				8E7B738D2C59390900A5FB7C /* SceneDelegate.swift in Sources */,
+				8E7B73BE2C5A78CE00A5FB7C /* SimplePickerView.swift in Sources */,
 				8E7B73AA2C594E7700A5FB7C /* PickerViewVC.swift in Sources */,
 				8E7B73AF2C5953D500A5FB7C /* Switch.swift in Sources */,
 			);
