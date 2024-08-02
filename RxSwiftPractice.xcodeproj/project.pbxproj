@@ -26,6 +26,19 @@
 		8E7B73BC2C5A74E700A5FB7C /* SimpleTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B73BB2C5A74E700A5FB7C /* SimpleTableView.swift */; };
 		8E7B73BE2C5A78CE00A5FB7C /* SimplePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B73BD2C5A78CE00A5FB7C /* SimplePickerView.swift */; };
 		8E7B73C02C5A7D0000A5FB7C /* OperatorCombineLatest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B73BF2C5A7D0000A5FB7C /* OperatorCombineLatest.swift */; };
+		8E7B73D32C5C886900A5FB7C /* PointButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B73C12C5C886900A5FB7C /* PointButton.swift */; };
+		8E7B73D42C5C886900A5FB7C /* SignTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B73C22C5C886900A5FB7C /* SignTextField.swift */; };
+		8E7B73D52C5C886900A5FB7C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B73C42C5C886900A5FB7C /* DetailViewController.swift */; };
+		8E7B73D62C5C886900A5FB7C /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B73C52C5C886900A5FB7C /* SearchTableViewCell.swift */; };
+		8E7B73D72C5C886900A5FB7C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B73C62C5C886900A5FB7C /* SearchViewController.swift */; };
+		8E7B73D82C5C886900A5FB7C /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B73C82C5C886900A5FB7C /* SignInViewController.swift */; };
+		8E7B73D92C5C886900A5FB7C /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B73C92C5C886900A5FB7C /* SignInViewModel.swift */; };
+		8E7B73DA2C5C886900A5FB7C /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B73CB2C5C886900A5FB7C /* PasswordViewController.swift */; };
+		8E7B73DB2C5C886900A5FB7C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B73CC2C5C886900A5FB7C /* SignUpViewController.swift */; };
+		8E7B73DC2C5C886900A5FB7C /* BirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B73CE2C5C886900A5FB7C /* BirthdayViewController.swift */; };
+		8E7B73DD2C5C886900A5FB7C /* NicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B73CF2C5C886900A5FB7C /* NicknameViewController.swift */; };
+		8E7B73DE2C5C886900A5FB7C /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B73D02C5C886900A5FB7C /* PhoneViewController.swift */; };
+		8E7B73E02C5C997100A5FB7C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B73DF2C5C997100A5FB7C /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +60,19 @@
 		8E7B73BB2C5A74E700A5FB7C /* SimpleTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableView.swift; sourceTree = "<group>"; };
 		8E7B73BD2C5A78CE00A5FB7C /* SimplePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplePickerView.swift; sourceTree = "<group>"; };
 		8E7B73BF2C5A7D0000A5FB7C /* OperatorCombineLatest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorCombineLatest.swift; sourceTree = "<group>"; };
+		8E7B73C12C5C886900A5FB7C /* PointButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointButton.swift; sourceTree = "<group>"; };
+		8E7B73C22C5C886900A5FB7C /* SignTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignTextField.swift; sourceTree = "<group>"; };
+		8E7B73C42C5C886900A5FB7C /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		8E7B73C52C5C886900A5FB7C /* SearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		8E7B73C62C5C886900A5FB7C /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		8E7B73C82C5C886900A5FB7C /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		8E7B73C92C5C886900A5FB7C /* SignInViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		8E7B73CB2C5C886900A5FB7C /* PasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
+		8E7B73CC2C5C886900A5FB7C /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		8E7B73CE2C5C886900A5FB7C /* BirthdayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirthdayViewController.swift; sourceTree = "<group>"; };
+		8E7B73CF2C5C886900A5FB7C /* NicknameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NicknameViewController.swift; sourceTree = "<group>"; };
+		8E7B73D02C5C886900A5FB7C /* PhoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneViewController.swift; sourceTree = "<group>"; };
+		8E7B73DF2C5C997100A5FB7C /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +108,7 @@
 		8E7B73892C59390900A5FB7C /* RxSwiftPractice */ = {
 			isa = PBXGroup;
 			children = (
+				8E7B73D22C5C886900A5FB7C /* Login */,
 				8E7B739E2C593A8A00A5FB7C /* Practice */,
 				8E7B738A2C59390900A5FB7C /* AppDelegate.swift */,
 				8E7B738C2C59390900A5FB7C /* SceneDelegate.swift */,
@@ -109,6 +136,66 @@
 				8E7B73BF2C5A7D0000A5FB7C /* OperatorCombineLatest.swift */,
 			);
 			path = Practice;
+			sourceTree = "<group>";
+		};
+		8E7B73C32C5C886900A5FB7C /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				8E7B73C12C5C886900A5FB7C /* PointButton.swift */,
+				8E7B73C22C5C886900A5FB7C /* SignTextField.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		8E7B73C72C5C886900A5FB7C /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				8E7B73C42C5C886900A5FB7C /* DetailViewController.swift */,
+				8E7B73C52C5C886900A5FB7C /* SearchTableViewCell.swift */,
+				8E7B73C62C5C886900A5FB7C /* SearchViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		8E7B73CA2C5C886900A5FB7C /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				8E7B73C82C5C886900A5FB7C /* SignInViewController.swift */,
+				8E7B73C92C5C886900A5FB7C /* SignInViewModel.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		8E7B73CD2C5C886900A5FB7C /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				8E7B73CB2C5C886900A5FB7C /* PasswordViewController.swift */,
+				8E7B73CC2C5C886900A5FB7C /* SignUpViewController.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		8E7B73D12C5C886900A5FB7C /* SignUpOptional */ = {
+			isa = PBXGroup;
+			children = (
+				8E7B73CE2C5C886900A5FB7C /* BirthdayViewController.swift */,
+				8E7B73CF2C5C886900A5FB7C /* NicknameViewController.swift */,
+				8E7B73D02C5C886900A5FB7C /* PhoneViewController.swift */,
+			);
+			path = SignUpOptional;
+			sourceTree = "<group>";
+		};
+		8E7B73D22C5C886900A5FB7C /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				8E7B73C32C5C886900A5FB7C /* CustomView */,
+				8E7B73C72C5C886900A5FB7C /* Search */,
+				8E7B73CA2C5C886900A5FB7C /* SignIn */,
+				8E7B73CD2C5C886900A5FB7C /* SignUp */,
+				8E7B73D12C5C886900A5FB7C /* SignUpOptional */,
+				8E7B73DF2C5C997100A5FB7C /* Colors.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,19 +278,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E7B73AD2C5951CB00A5FB7C /* TableViewVC.swift in Sources */,
+				8E7B73D52C5C886900A5FB7C /* DetailViewController.swift in Sources */,
 				8E7B73BC2C5A74E700A5FB7C /* SimpleTableView.swift in Sources */,
+				8E7B73DA2C5C886900A5FB7C /* PasswordViewController.swift in Sources */,
 				8E7B73B82C5A58F100A5FB7C /* AddingNumbers.swift in Sources */,
+				8E7B73DC2C5C886900A5FB7C /* BirthdayViewController.swift in Sources */,
+				8E7B73D72C5C886900A5FB7C /* SearchViewController.swift in Sources */,
+				8E7B73DB2C5C886900A5FB7C /* SignUpViewController.swift in Sources */,
 				8E7B738F2C59390900A5FB7C /* ViewController.swift in Sources */,
 				8E7B73BA2C5A5E5100A5FB7C /* SimpleValidation.swift in Sources */,
+				8E7B73E02C5C997100A5FB7C /* Colors.swift in Sources */,
 				8E7B73A02C593AA300A5FB7C /* FirstPractice.swift in Sources */,
+				8E7B73DD2C5C886900A5FB7C /* NicknameViewController.swift in Sources */,
+				8E7B73D92C5C886900A5FB7C /* SignInViewModel.swift in Sources */,
+				8E7B73D82C5C886900A5FB7C /* SignInViewController.swift in Sources */,
 				8E7B738B2C59390900A5FB7C /* AppDelegate.swift in Sources */,
 				8E7B73B12C5956BB00A5FB7C /* TextFieldButton.swift in Sources */,
+				8E7B73D62C5C886900A5FB7C /* SearchTableViewCell.swift in Sources */,
+				8E7B73D42C5C886900A5FB7C /* SignTextField.swift in Sources */,
 				8E7B73B32C595AD300A5FB7C /* ObservableExample.swift in Sources */,
 				8E7B738D2C59390900A5FB7C /* SceneDelegate.swift in Sources */,
 				8E7B73BE2C5A78CE00A5FB7C /* SimplePickerView.swift in Sources */,
 				8E7B73AA2C594E7700A5FB7C /* PickerViewVC.swift in Sources */,
 				8E7B73C02C5A7D0000A5FB7C /* OperatorCombineLatest.swift in Sources */,
+				8E7B73DE2C5C886900A5FB7C /* PhoneViewController.swift in Sources */,
 				8E7B73AF2C5953D500A5FB7C /* Switch.swift in Sources */,
+				8E7B73D32C5C886900A5FB7C /* PointButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
