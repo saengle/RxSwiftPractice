@@ -14,21 +14,29 @@ class ShoppingViewModel {
     
     let disposeBag = DisposeBag()
     
-    let items = Observable.just([
-    "아이패드",
-    "아이폰",
-    "아이폰플립"
-    ])
+    var items = BehaviorRelay(value: [
+        Shopping(isChecked: true, isStar: false, content: "아이폰사기"),
+        Shopping(isChecked: false, isStar: true, content: "콩나물 사가기"),
+        Shopping(isChecked: false, isStar: true, content: "통 앞다리살 두근")])
     
     struct Input {
-//        let item = 
-        let addTap: ControlEvent<Void>
+        let addTapCell: ControlEvent<Void>
+        let addTapCheck: ControlEvent<Void>
+        let addTapStar: ControlEvent<Void>
+        let row: ControlProperty<Int>
+        let shoppings: BehaviorRelay<[Shopping]>
     }
     struct Output {
-        let addTap: ControlEvent<Void>
+        let addTapCell: ControlEvent<Void>
+        let shoppings: BehaviorRelay<[Shopping]>
     }
-//    func transform(input: Input) -> Output {
-//        
-//        return
-//    }
+    func transform(input: Input) -> Output {
+        
+        input.addTapCheck
+            .bind(with: self) { owner, _ in
+//                items[]
+            }
+        
+        return Output(addTapCell: input.addTapCell, shoppings: items)
+    }
 }

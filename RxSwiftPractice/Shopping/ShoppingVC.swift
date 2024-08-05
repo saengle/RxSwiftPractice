@@ -10,10 +10,16 @@ import UIKit
 import RxCocoa
 import RxSwift
 import SnapKit
+struct Shopping: Identifiable {
+    let id = UUID()
+    var isChecked: Bool
+    var isStar: Bool
+    let content: String
+}
 
 class ShoppingVC: UIViewController {
     
-    let textField = { 
+    let textField = {
         let tf = UITextField()
         tf.placeholder = "추가할 쇼핑 리스트를 입력해주세요"
         return tf
@@ -35,28 +41,38 @@ class ShoppingVC: UIViewController {
     
     let disposeBag = DisposeBag()
     
+    var items = [
+        Shopping(isChecked: true, isStar: false, content: "아이폰사기"),
+        Shopping(isChecked: false, isStar: true, content: "콩나물 사가기"),
+        Shopping(isChecked: false, isStar: true, content: "통 앞다리살 두근")]
+    
+   lazy var itemList = BehaviorRelay(value: items)
+    
     func bind() {
-//        let input = ShoppingViewModel.Inpu
-//        let output = vm.transform
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
-        let items = Observable.just([
-        "아이패드",
-        "아이폰",
-        "아이폰플립"
-        ])
+        tableView.register(ShoppingTableViewCell.self, forCellReuseIdentifier: ShoppingTableViewCell.id)
         
-        items.bind(to: tableView.rx.items) { (tableView, row, element) in
-            let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
-            cell.textLabel?.text = "\(element)"
-            return cell
+        //        let input = ShoppingViewModel.Input(addTapCell: , addTapCheck: <#T##ControlEvent<Void>#>, addTapStar: <#T##ControlEvent<Void>#>, row: <#T##ControlProperty<Int>#>, shoppings: <#T##BehaviorRelay<[Shopping]>#>)
+        //        let output = vm.transform(input: input)
+        //
+        
+        
+        
+        itemList.bind(to: tableView.rx.items(cellIdentifier: ShoppingTableViewCell.id, cellType: ShoppingTableViewCell.self)) { (row, element, cell) in
+            print(element)
+            print(type(of: element))
+            //            cell.configureCell(data: element)
+            cell.checkButton.rx.tap
+                .bind(with: self) { owner, _ in
+                    print(owner)
+                }.disposed(by: cell.disposeBag)
         }
         .disposed(by: disposeBag)
         
         tableView.rx.modelSelected(String.self) //셀 터치 이벤트
             .map{ data in
-            "\(data)를 클릭했습니다"}
+                "\(data)를 클릭했습니다"}
             .bind(with: self, onNext: { owner, value in
                 print(value)
             })
@@ -64,7 +80,11 @@ class ShoppingVC: UIViewController {
         
         addButton.rx.tap
             .bind(with: self) { owner, _ in
-                print("버튼 눌림")
+                owner.textField.rx.text.orEmpty
+                    .bind(with: self) { owner, value in
+                        owner.items.append(Shopping(isChecked: false, isStar: false, content: value))
+                    }
+                owner.itemList.accept(owner.items)
             }
     }
     
