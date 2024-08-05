@@ -42,8 +42,5 @@ class SimpleTableView: UIViewController {
                 print("\(indexPath.section), \(indexPath.row) pressed")
             })
             .disposed(by: disposeBag)// ????
-        
-        
     }
-    
 }

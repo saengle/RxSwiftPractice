@@ -39,6 +39,8 @@
 		8E7B73DD2C5C886900A5FB7C /* NicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B73CF2C5C886900A5FB7C /* NicknameViewController.swift */; };
 		8E7B73DE2C5C886900A5FB7C /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B73D02C5C886900A5FB7C /* PhoneViewController.swift */; };
 		8E7B73E02C5C997100A5FB7C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B73DF2C5C997100A5FB7C /* Colors.swift */; };
+		8E7B73E72C60B72600A5FB7C /* ShoppingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B73E62C60B72600A5FB7C /* ShoppingVC.swift */; };
+		8E7B73E92C60B72E00A5FB7C /* ShoppingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B73E82C60B72E00A5FB7C /* ShoppingViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +75,8 @@
 		8E7B73CF2C5C886900A5FB7C /* NicknameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NicknameViewController.swift; sourceTree = "<group>"; };
 		8E7B73D02C5C886900A5FB7C /* PhoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneViewController.swift; sourceTree = "<group>"; };
 		8E7B73DF2C5C997100A5FB7C /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		8E7B73E62C60B72600A5FB7C /* ShoppingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingVC.swift; sourceTree = "<group>"; };
+		8E7B73E82C60B72E00A5FB7C /* ShoppingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,7 @@
 		8E7B73892C59390900A5FB7C /* RxSwiftPractice */ = {
 			isa = PBXGroup;
 			children = (
+				8E7B73E52C60B71500A5FB7C /* Shopping */,
 				8E7B73D22C5C886900A5FB7C /* Login */,
 				8E7B739E2C593A8A00A5FB7C /* Practice */,
 				8E7B738A2C59390900A5FB7C /* AppDelegate.swift */,
@@ -198,6 +203,15 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		8E7B73E52C60B71500A5FB7C /* Shopping */ = {
+			isa = PBXGroup;
+			children = (
+				8E7B73E62C60B72600A5FB7C /* ShoppingVC.swift */,
+				8E7B73E82C60B72E00A5FB7C /* ShoppingViewModel.swift */,
+			);
+			path = Shopping;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -281,6 +295,8 @@
 				8E7B73D52C5C886900A5FB7C /* DetailViewController.swift in Sources */,
 				8E7B73BC2C5A74E700A5FB7C /* SimpleTableView.swift in Sources */,
 				8E7B73DA2C5C886900A5FB7C /* PasswordViewController.swift in Sources */,
+				8E7B73E92C60B72E00A5FB7C /* ShoppingViewModel.swift in Sources */,
+				8E7B73E72C60B72600A5FB7C /* ShoppingVC.swift in Sources */,
 				8E7B73B82C5A58F100A5FB7C /* AddingNumbers.swift in Sources */,
 				8E7B73DC2C5C886900A5FB7C /* BirthdayViewController.swift in Sources */,
 				8E7B73D72C5C886900A5FB7C /* SearchViewController.swift in Sources */,
