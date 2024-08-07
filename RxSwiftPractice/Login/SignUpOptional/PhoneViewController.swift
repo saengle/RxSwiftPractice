@@ -23,6 +23,8 @@ class PhoneViewController: UIViewController {
     
     let nextButton = PointButton(title: "다음")
     
+    let vm = PhoneViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -83,5 +85,4 @@ class PhoneViewController: UIViewController {
             make.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(20)
         }
     }
-
 }

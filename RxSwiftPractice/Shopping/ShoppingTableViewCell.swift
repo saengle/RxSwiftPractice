@@ -17,7 +17,8 @@ class ShoppingTableViewCell: UITableViewCell {
     let label = UILabel()
     let checkButton = {
         let bt = UIButton()
-        bt.setImage(UIImage(systemName: "checkbox"), for: .normal)
+        bt.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+        bt.setImage(UIImage(systemName: "checkmark.square.fill"), for: .selected)
         bt.tintColor = .black
         return bt
     }()
@@ -25,11 +26,17 @@ class ShoppingTableViewCell: UITableViewCell {
     let starButton = {
         let bt = UIButton()
         bt.setImage(UIImage(systemName: "star"), for: .normal)
+        bt.setImage(UIImage(systemName: "star.fill"), for: .selected)
         bt.tintColor = .black
         return bt
     }()
     
-    let disposeBag = DisposeBag()
+    var disposeBag = DisposeBag()
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        disposeBag = DisposeBag()
+    }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -41,20 +48,16 @@ class ShoppingTableViewCell: UITableViewCell {
     }
 
     func configureCell(data: Shopping) {
-        let myData = BehaviorSubject(value: data)
-        let checkButtonImage = data.isChecked ? UIImage(systemName: "checkmark.square.fill") : UIImage(systemName: "checkmark.square")
-        let starButtonImage = data.isStar ? UIImage(systemName: "star.fill") : UIImage(systemName: "star")
-        myData.bind(with: self) { cell, data in
-            cell.checkButton.setImage(checkButtonImage, for: .normal)
-            cell.starButton.setImage(starButtonImage, for: .normal)
-        }.disposed(by: disposeBag)
+        checkButton.isSelected = data.isChecked
+        starButton.isSelected = data.isStar
         label.rx.text.onNext(data.content)
     }
     
-    func setUI() {
+    private func setUI() {
         contentView.addSubview(label)
         contentView.addSubview(checkButton)
         contentView.addSubview(starButton)
+        
         label.snp.makeConstraints { make in
             make.centerX.centerY.equalToSuperview()
         }

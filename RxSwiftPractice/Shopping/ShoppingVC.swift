@@ -29,6 +29,16 @@ class ShoppingVC: UIViewController {
         bt.setTitle("추가", for: .normal)
         return bt
     }()
+    
+    let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout())
+    
+    static func layout() -> UICollectionViewFlowLayout {
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 120, height: 40)
+        layout.scrollDirection = .horizontal
+        return layout
+    }
+    
     let tableView = UITableView()
     
     let vm = ShoppingViewModel()
@@ -41,51 +51,53 @@ class ShoppingVC: UIViewController {
     
     let disposeBag = DisposeBag()
     
-    var items = [
-        Shopping(isChecked: true, isStar: false, content: "아이폰사기"),
-        Shopping(isChecked: false, isStar: true, content: "콩나물 사가기"),
-        Shopping(isChecked: false, isStar: true, content: "통 앞다리살 두근")]
-    
-   lazy var itemList = BehaviorRelay(value: items)
-    
     func bind() {
         
+        let input = ShoppingViewModel.Input(
+//            addTapCell: <#T##ControlEvent<Void>#>,
+//            tapCheck: ,
+//            addTapStar: <#T##ControlEvent<Void>#>,
+//            row: <#T##ControlProperty<Int>#>,
+//            shoppings: BehaviorSubject<[Shopping]>
+        )
         
-        tableView.register(ShoppingTableViewCell.self, forCellReuseIdentifier: ShoppingTableViewCell.id)
+        let checkTap: () = ()
         
-        //        let input = ShoppingViewModel.Input(addTapCell: , addTapCheck: <#T##ControlEvent<Void>#>, addTapStar: <#T##ControlEvent<Void>#>, row: <#T##ControlProperty<Int>#>, shoppings: <#T##BehaviorRelay<[Shopping]>#>)
-        //        let output = vm.transform(input: input)
-        //
+        let output = vm.transform(input: input)
         
+
         
-        
-        itemList.bind(to: tableView.rx.items(cellIdentifier: ShoppingTableViewCell.id, cellType: ShoppingTableViewCell.self)) { (row, element, cell) in
-            print(element)
-            print(type(of: element))
-            //            cell.configureCell(data: element)
+        output.tableShoppings.bind(to: tableView.rx.items(cellIdentifier: ShoppingTableViewCell.id, cellType: ShoppingTableViewCell.self)) {(row, element, cell) in
+            cell.configureCell(data: element)
+            
             cell.checkButton.rx.tap
-                .bind(with: self) { owner, _ in
-                    print(owner)
+                .bind(with: self) { owner, void in
+                    owner.vm.tableItems[row].isChecked.toggle()
                 }.disposed(by: cell.disposeBag)
         }
         .disposed(by: disposeBag)
         
-        tableView.rx.modelSelected(String.self) //셀 터치 이벤트
-            .map{ data in
-                "\(data)를 클릭했습니다"}
-            .bind(with: self, onNext: { owner, value in
-                print(value)
-            })
-            .disposed(by: disposeBag)
+        output.collectionShoppings.bind(to: collectionView.rx.items(cellIdentifier: ShoppingCollectionViewCell.id, cellType: ShoppingCollectionViewCell.self)) { (row, element, cell) in
+            cell.configureCell(data: element)
+        }
+        .disposed(by: disposeBag)
         
-        addButton.rx.tap
-            .bind(with: self) { owner, _ in
-                owner.textField.rx.text.orEmpty
-                    .bind(with: self) { owner, value in
-                        owner.items.append(Shopping(isChecked: false, isStar: false, content: value))
-                    }
-                owner.itemList.accept(owner.items)
-            }
+//        tableView.rx.modelSelected(String.self) //셀 터치 이벤트
+//            .map{ data in
+//                "\(data)를 클릭했습니다"}
+//            .bind(with: self, onNext: { owner, value in
+//                print(value)
+//            })
+//            .disposed(by: disposeBag)
+        
+//        addButton.rx.tap
+//            .bind(with: self) { owner, _ in
+//                owner.textField.rx.text.orEmpty
+//                    .bind(with: self) { owner, value in
+//                        owner.items.append(Shopping(isChecked: false, isStar: false, content: value))
+//                    }
+//                owner.itemList.accept(owner.items)
+//            }
     }
     
     func setUI() {
@@ -94,6 +106,7 @@ class ShoppingVC: UIViewController {
         view.addSubview(textField)
         view.addSubview(addButton)
         view.addSubview(tableView)
+        view.addSubview(collectionView)
         
         textField.backgroundColor = .lightGray
         textField.snp.makeConstraints { make in
@@ -107,9 +120,17 @@ class ShoppingVC: UIViewController {
             make.height.equalTo(32)
             make.width.equalTo(72)
         }
-        tableView.backgroundColor = .blue
-        tableView.snp.makeConstraints { make in
+        
+        collectionView.register(ShoppingCollectionViewCell.self, forCellWithReuseIdentifier: ShoppingCollectionViewCell.id)
+        collectionView.snp.makeConstraints { make in
             make.top.equalTo(textField.snp.bottom)
+            make.horizontalEdges.equalTo(view.safeAreaLayoutGuide)
+            make.height.equalTo(44)
+        }
+        
+        tableView.register(ShoppingTableViewCell.self, forCellReuseIdentifier: ShoppingTableViewCell.id)
+        tableView.snp.makeConstraints { make in
+            make.top.equalTo(collectionView.snp.bottom)
             make.bottom.equalTo(view.safeAreaLayoutGuide)
             make.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(16)
         }

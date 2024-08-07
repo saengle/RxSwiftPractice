@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E4819D82C636F98001C6EEB /* ShoppingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4819D72C636F98001C6EEB /* ShoppingCollectionViewCell.swift */; };
 		8E7B738B2C59390900A5FB7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B738A2C59390900A5FB7C /* AppDelegate.swift */; };
 		8E7B738D2C59390900A5FB7C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B738C2C59390900A5FB7C /* SceneDelegate.swift */; };
 		8E7B738F2C59390900A5FB7C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B738E2C59390900A5FB7C /* ViewController.swift */; };
@@ -43,9 +44,11 @@
 		8E7B73E92C60B72E00A5FB7C /* ShoppingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B73E82C60B72E00A5FB7C /* ShoppingViewModel.swift */; };
 		8E7B73EB2C60C2AE00A5FB7C /* ShoppingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B73EA2C60C2AE00A5FB7C /* ShoppingTableViewCell.swift */; };
 		8E7B73ED2C6122C300A5FB7C /* BirthdayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B73EC2C6122C300A5FB7C /* BirthdayViewModel.swift */; };
+		8E7B73EF2C6127C400A5FB7C /* PhoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B73EE2C6127C400A5FB7C /* PhoneViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8E4819D72C636F98001C6EEB /* ShoppingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCollectionViewCell.swift; sourceTree = "<group>"; };
 		8E7B73872C59390900A5FB7C /* RxSwiftPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwiftPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E7B738A2C59390900A5FB7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E7B738C2C59390900A5FB7C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +84,7 @@
 		8E7B73E82C60B72E00A5FB7C /* ShoppingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingViewModel.swift; sourceTree = "<group>"; };
 		8E7B73EA2C60C2AE00A5FB7C /* ShoppingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTableViewCell.swift; sourceTree = "<group>"; };
 		8E7B73EC2C6122C300A5FB7C /* BirthdayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayViewModel.swift; sourceTree = "<group>"; };
+		8E7B73EE2C6127C400A5FB7C /* PhoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +195,7 @@
 				8E7B73CF2C5C886900A5FB7C /* NicknameViewController.swift */,
 				8E7B73D02C5C886900A5FB7C /* PhoneViewController.swift */,
 				8E7B73EC2C6122C300A5FB7C /* BirthdayViewModel.swift */,
+				8E7B73EE2C6127C400A5FB7C /* PhoneViewModel.swift */,
 			);
 			path = SignUpOptional;
 			sourceTree = "<group>";
@@ -214,6 +219,7 @@
 				8E7B73E62C60B72600A5FB7C /* ShoppingVC.swift */,
 				8E7B73E82C60B72E00A5FB7C /* ShoppingViewModel.swift */,
 				8E7B73EA2C60C2AE00A5FB7C /* ShoppingTableViewCell.swift */,
+				8E4819D72C636F98001C6EEB /* ShoppingCollectionViewCell.swift */,
 			);
 			path = Shopping;
 			sourceTree = "<group>";
@@ -307,6 +313,7 @@
 				8E7B73DC2C5C886900A5FB7C /* BirthdayViewController.swift in Sources */,
 				8E7B73D72C5C886900A5FB7C /* SearchViewController.swift in Sources */,
 				8E7B73DB2C5C886900A5FB7C /* SignUpViewController.swift in Sources */,
+				8E4819D82C636F98001C6EEB /* ShoppingCollectionViewCell.swift in Sources */,
 				8E7B738F2C59390900A5FB7C /* ViewController.swift in Sources */,
 				8E7B73BA2C5A5E5100A5FB7C /* SimpleValidation.swift in Sources */,
 				8E7B73E02C5C997100A5FB7C /* Colors.swift in Sources */,
@@ -318,6 +325,7 @@
 				8E7B738B2C59390900A5FB7C /* AppDelegate.swift in Sources */,
 				8E7B73B12C5956BB00A5FB7C /* TextFieldButton.swift in Sources */,
 				8E7B73D62C5C886900A5FB7C /* SearchTableViewCell.swift in Sources */,
+				8E7B73EF2C6127C400A5FB7C /* PhoneViewModel.swift in Sources */,
 				8E7B73D42C5C886900A5FB7C /* SignTextField.swift in Sources */,
 				8E7B73B32C595AD300A5FB7C /* ObservableExample.swift in Sources */,
 				8E7B738D2C59390900A5FB7C /* SceneDelegate.swift in Sources */,
