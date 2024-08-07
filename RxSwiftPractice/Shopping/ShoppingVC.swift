@@ -53,19 +53,15 @@ class ShoppingVC: UIViewController {
     
     func bind() {
         
+        let recentShopping = PublishSubject<Shopping>()
+        let checkStarButtonTapped = PublishSubject<String>()
+        
         let input = ShoppingViewModel.Input(
-//            addTapCell: <#T##ControlEvent<Void>#>,
-//            tapCheck: ,
-//            addTapStar: <#T##ControlEvent<Void>#>,
-//            row: <#T##ControlProperty<Int>#>,
-//            shoppings: BehaviorSubject<[Shopping]>
+            checkStarButtonTap: checkStarButtonTapped,
+            shoppings: recentShopping
         )
         
-        let checkTap: () = ()
-        
         let output = vm.transform(input: input)
-        
-
         
         output.tableShoppings.bind(to: tableView.rx.items(cellIdentifier: ShoppingTableViewCell.id, cellType: ShoppingTableViewCell.self)) {(row, element, cell) in
             cell.configureCell(data: element)
@@ -73,6 +69,12 @@ class ShoppingVC: UIViewController {
             cell.checkButton.rx.tap
                 .bind(with: self) { owner, void in
                     owner.vm.tableItems[row].isChecked.toggle()
+                    checkStarButtonTapped.onNext("")
+                }.disposed(by: cell.disposeBag)
+            cell.starButton.rx.tap
+                .bind(with: self) { owner, void in
+                    owner.vm.tableItems[row].isStar.toggle()
+                    checkStarButtonTapped.onNext("")
                 }.disposed(by: cell.disposeBag)
         }
         .disposed(by: disposeBag)
@@ -81,6 +83,11 @@ class ShoppingVC: UIViewController {
             cell.configureCell(data: element)
         }
         .disposed(by: disposeBag)
+        
+        collectionView.rx.modelSelected(Shopping.self)
+            .bind(with: self) { owner, shopping in
+                recentShopping.onNext(shopping)
+            }
         
 //        tableView.rx.modelSelected(String.self) //셀 터치 이벤트
 //            .map{ data in

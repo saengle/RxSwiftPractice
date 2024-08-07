@@ -23,17 +23,19 @@ class ShoppingViewModel {
     private lazy var myTableItems = BehaviorSubject(value: tableItems)
     
     var collectionItems: [Shopping] = [
-    Shopping(isChecked: false, isStar: false, content: "목업데이터")
+    Shopping(isChecked: false, isStar: false, content: "IT"),
+    Shopping(isChecked: false, isStar: false, content: "음식"),
+    Shopping(isChecked: false, isStar: false, content: "가구"),
+    Shopping(isChecked: false, isStar: false, content: "밀키트"),
+    Shopping(isChecked: false, isStar: false, content: "음료"),
+    Shopping(isChecked: false, isStar: false, content: "Apple"),
     ]
     
     private lazy var myCollectionItems = BehaviorSubject(value: collectionItems)
     
     struct Input {
-        //        let addTapCell: ControlEvent<Void>
-//                let tapCheck: ()
-//                let tapStar: ControlEvent<Void>
-        //        let row: ControlProperty<Int>
-        //        let shoppings: PublishSubject<[Shopping]>
+                let checkStarButtonTap: PublishSubject<String>
+                let shoppings: PublishSubject<Shopping>
     }
     
     struct Output {
@@ -44,11 +46,14 @@ class ShoppingViewModel {
     
     func transform(input: Input) -> Output {
         
+        input.shoppings.subscribe(with: self) { owner, value in
+            owner.tableItems.append(value)
+            owner.myTableItems.onNext(owner.tableItems)
+        }.disposed(by: disposeBag)
         
-        //        input.addTapCheck
-        //            .bind(with: self) { owner, _ in
-        ////                items[]
-        //            }
+        input.checkStarButtonTap.subscribe(with: self) { owner, value in
+            owner.myTableItems.onNext(owner.tableItems)
+        }.disposed(by: disposeBag)
         
         return Output( tableShoppings: myTableItems, collectionShoppings: myCollectionItems)
     }
