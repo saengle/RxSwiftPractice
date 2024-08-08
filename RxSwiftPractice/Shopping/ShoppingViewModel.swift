@@ -34,7 +34,8 @@ class ShoppingViewModel {
     private lazy var myCollectionItems = BehaviorSubject(value: collectionItems)
     
     struct Input {
-                let checkStarButtonTap: PublishSubject<String>
+        let starButtonTap: PublishSubject<Int>
+                let checkButtonTap: PublishSubject<Int>
                 let shoppings: PublishSubject<Shopping>
     }
     
@@ -51,7 +52,13 @@ class ShoppingViewModel {
             owner.myTableItems.onNext(owner.tableItems)
         }.disposed(by: disposeBag)
         
-        input.checkStarButtonTap.subscribe(with: self) { owner, value in
+        input.checkButtonTap.subscribe(with: self) { owner, value in
+            owner.tableItems[value].isChecked.toggle()
+            owner.myTableItems.onNext(owner.tableItems)
+        }.disposed(by: disposeBag)
+        
+        input.starButtonTap.subscribe(with: self) { owner, value in
+            owner.tableItems[value].isStar.toggle()
             owner.myTableItems.onNext(owner.tableItems)
         }.disposed(by: disposeBag)
         
