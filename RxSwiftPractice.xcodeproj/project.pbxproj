@@ -52,6 +52,9 @@
 		8E7B73EF2C6127C400A5FB7C /* PhoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B73EE2C6127C400A5FB7C /* PhoneViewModel.swift */; };
 		8E9581502C65D1870067E5F5 /* MovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E95814F2C65D1870067E5F5 /* MovieView.swift */; };
 		8E9581522C65DFDF0067E5F5 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9581512C65DFDF0067E5F5 /* Movie.swift */; };
+		8E9581542C6603340067E5F5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9581532C6603340067E5F5 /* NetworkManager.swift */; };
+		8E9581562C6603550067E5F5 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 8E9581552C6603550067E5F5 /* .gitignore */; };
+		8E9581582C6603790067E5F5 /* APISecure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9581572C6603790067E5F5 /* APISecure.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +102,9 @@
 		8E7B73EE2C6127C400A5FB7C /* PhoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewModel.swift; sourceTree = "<group>"; };
 		8E95814F2C65D1870067E5F5 /* MovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieView.swift; sourceTree = "<group>"; };
 		8E9581512C65DFDF0067E5F5 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		8E9581532C6603340067E5F5 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		8E9581552C6603550067E5F5 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		8E9581572C6603790067E5F5 /* APISecure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISecure.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +130,7 @@
 				8E4819E52C64B95E001C6EEB /* MovieViewModel.swift */,
 				8E95814F2C65D1870067E5F5 /* MovieView.swift */,
 				8E9581512C65DFDF0067E5F5 /* Movie.swift */,
+				8E9581532C6603340067E5F5 /* NetworkManager.swift */,
 			);
 			path = Movie;
 			sourceTree = "<group>";
@@ -139,6 +146,7 @@
 		8E7B737E2C59390900A5FB7C = {
 			isa = PBXGroup;
 			children = (
+				8E9581552C6603550067E5F5 /* .gitignore */,
 				8E7B73892C59390900A5FB7C /* RxSwiftPractice */,
 				8E7B73882C59390900A5FB7C /* Products */,
 			);
@@ -166,6 +174,7 @@
 				8E7B73932C59390B00A5FB7C /* Assets.xcassets */,
 				8E7B73952C59390B00A5FB7C /* LaunchScreen.storyboard */,
 				8E7B73982C59390B00A5FB7C /* Info.plist */,
+				8E9581572C6603790067E5F5 /* APISecure.swift */,
 			);
 			path = RxSwiftPractice;
 			sourceTree = "<group>";
@@ -329,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E7B73942C59390B00A5FB7C /* Assets.xcassets in Resources */,
+				8E9581562C6603550067E5F5 /* .gitignore in Resources */,
 				8E7B73972C59390B00A5FB7C /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,6 +359,7 @@
 				8E7B73B82C5A58F100A5FB7C /* AddingNumbers.swift in Sources */,
 				8E7B73DC2C5C886900A5FB7C /* BirthdayViewController.swift in Sources */,
 				8E7B73D72C5C886900A5FB7C /* SearchViewController.swift in Sources */,
+				8E9581582C6603790067E5F5 /* APISecure.swift in Sources */,
 				8E7B73DB2C5C886900A5FB7C /* SignUpViewController.swift in Sources */,
 				8E4819D82C636F98001C6EEB /* ShoppingCollectionViewCell.swift in Sources */,
 				8E7B738F2C59390900A5FB7C /* ViewController.swift in Sources */,
@@ -358,6 +369,7 @@
 				8E7B73E02C5C997100A5FB7C /* Colors.swift in Sources */,
 				8E7B73A02C593AA300A5FB7C /* FirstPractice.swift in Sources */,
 				8E4819E42C64B956001C6EEB /* MovieCollectionViewCell.swift in Sources */,
+				8E9581542C6603340067E5F5 /* NetworkManager.swift in Sources */,
 				8E7B73DD2C5C886900A5FB7C /* NicknameViewController.swift in Sources */,
 				8E7B73D92C5C886900A5FB7C /* SignInViewModel.swift in Sources */,
 				8E7B73D82C5C886900A5FB7C /* SignInViewController.swift in Sources */,
