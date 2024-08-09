@@ -50,6 +50,8 @@
 		8E7B73EB2C60C2AE00A5FB7C /* ShoppingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B73EA2C60C2AE00A5FB7C /* ShoppingTableViewCell.swift */; };
 		8E7B73ED2C6122C300A5FB7C /* BirthdayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B73EC2C6122C300A5FB7C /* BirthdayViewModel.swift */; };
 		8E7B73EF2C6127C400A5FB7C /* PhoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7B73EE2C6127C400A5FB7C /* PhoneViewModel.swift */; };
+		8E9581502C65D1870067E5F5 /* MovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E95814F2C65D1870067E5F5 /* MovieView.swift */; };
+		8E9581522C65DFDF0067E5F5 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9581512C65DFDF0067E5F5 /* Movie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,6 +97,8 @@
 		8E7B73EA2C60C2AE00A5FB7C /* ShoppingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTableViewCell.swift; sourceTree = "<group>"; };
 		8E7B73EC2C6122C300A5FB7C /* BirthdayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayViewModel.swift; sourceTree = "<group>"; };
 		8E7B73EE2C6127C400A5FB7C /* PhoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewModel.swift; sourceTree = "<group>"; };
+		8E95814F2C65D1870067E5F5 /* MovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieView.swift; sourceTree = "<group>"; };
+		8E9581512C65DFDF0067E5F5 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,8 @@
 				8E4819E12C64B94B001C6EEB /* MovieTableViewCell.swift */,
 				8E4819E32C64B956001C6EEB /* MovieCollectionViewCell.swift */,
 				8E4819E52C64B95E001C6EEB /* MovieViewModel.swift */,
+				8E95814F2C65D1870067E5F5 /* MovieView.swift */,
+				8E9581512C65DFDF0067E5F5 /* Movie.swift */,
 			);
 			path = Movie;
 			sourceTree = "<group>";
@@ -348,6 +354,7 @@
 				8E7B738F2C59390900A5FB7C /* ViewController.swift in Sources */,
 				8E4819E82C64BCCB001C6EEB /* UIView+Extension.swift in Sources */,
 				8E7B73BA2C5A5E5100A5FB7C /* SimpleValidation.swift in Sources */,
+				8E9581522C65DFDF0067E5F5 /* Movie.swift in Sources */,
 				8E7B73E02C5C997100A5FB7C /* Colors.swift in Sources */,
 				8E7B73A02C593AA300A5FB7C /* FirstPractice.swift in Sources */,
 				8E4819E42C64B956001C6EEB /* MovieCollectionViewCell.swift in Sources */,
@@ -368,6 +375,7 @@
 				8E7B73EB2C60C2AE00A5FB7C /* ShoppingTableViewCell.swift in Sources */,
 				8E4819E22C64B94B001C6EEB /* MovieTableViewCell.swift in Sources */,
 				8E7B73C02C5A7D0000A5FB7C /* OperatorCombineLatest.swift in Sources */,
+				8E9581502C65D1870067E5F5 /* MovieView.swift in Sources */,
 				8E7B73DE2C5C886900A5FB7C /* PhoneViewController.swift in Sources */,
 				8E4819E62C64B95E001C6EEB /* MovieViewModel.swift in Sources */,
 				8E7B73AF2C5953D500A5FB7C /* Switch.swift in Sources */,
