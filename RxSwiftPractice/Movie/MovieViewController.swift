@@ -31,16 +31,22 @@ final class MovieViewController: UIViewController {
     
     private func bind() {
         let data = ["스트림덱", "키보드", "손풍기", "컵", "마우스패드", "샌들", ""]
+        
+        let input = MovieViewModel.Input(searchButtonTap: movieView.searchBar.rx.searchButtonClicked, query: movieView.searchBar.rx.text.orEmpty)
+        let output = vm.transform(input: input)
+        
         let myData = BehaviorSubject(value: data)
         myData.bind(to: movieView.collectionView.rx
             .items(cellIdentifier: MovieCollectionViewCell.id, cellType: MovieCollectionViewCell.self)) { (row, element, cell) in
             cell.label.text = "\(element)"
         }.disposed(by: disposeBag)
         
-        myData.bind(to: movieView.tableView.rx
+        output.movieList.bind(to: movieView.tableView.rx
             .items(cellIdentifier: MovieTableViewCell.id, cellType: MovieTableViewCell.self)) { (row, element, cell) in
-            cell.appNameLabel.text = element
+                cell.appNameLabel.text = element.movieNm
         }.disposed(by: disposeBag)
+        
+        
     }
     
     private func configureVC() {
