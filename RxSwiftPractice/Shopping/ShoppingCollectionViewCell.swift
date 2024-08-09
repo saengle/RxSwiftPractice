@@ -13,8 +13,6 @@ import RxSwift
 
 class ShoppingCollectionViewCell: UICollectionViewCell {
     
-    static let id = "ShoppingCollectionViewCell"
-    
     private let label = UILabel()
     
     override init(frame: CGRect) {

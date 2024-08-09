@@ -12,8 +12,6 @@ import RxSwift
 
 class ShoppingTableViewCell: UITableViewCell {
     
-    static let id = "ShoppingTableViewCell"
-    
     let label = UILabel()
     let checkButton = {
         let bt = UIButton()
